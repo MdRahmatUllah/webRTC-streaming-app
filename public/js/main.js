@@ -1,6 +1,5 @@
-const socket = io('/');
+import * as store from './store.js';
+import * as wss from './wss.js';
+const socket = io("/");
 
-socket.on("connect", () => {
-    console.log('Successfully connected to wss server');
-    console.log(socket.id);
-})
+wss.registerSocketEvents(socket);
